@@ -44,7 +44,7 @@ If the selected schema includes nested fields (e.g., groups of fields), the app 
 As users input data into the form, fields are validated in real-time. The app checks whether required fields are filled, and it ensures that the data entered matches the expected format (e.g., dates are valid, numbers are within range, etc.). Error messages are displayed for any issues detected during input.
 
 ### 5. Form Submission
-When the form is submitted, the data is sent to the server in the specified format. The data is structured according to the schema, with the form fields and their values packaged and sent as a JSON object.
+When the form is submitted, a message with the schema details is logged to the console in the specified format, simulating a server response. The data is structured according to the schema, with the form fields and their values packaged and displayed as a JSON object.
 
 ## Conclusion
 
