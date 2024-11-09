@@ -44,9 +44,3 @@ Conclusion
 This project demonstrates a schema-driven approach to form generation, making it highly scalable and maintainable.
 It dynamically adapts to varying schemas, ensuring robust form validation and an improved user experience.
 
-Let me know if you have more question about the project.
-Thank you. Eden Drori
-בב
-ב
-
-
