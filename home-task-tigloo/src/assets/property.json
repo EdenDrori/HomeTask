@@ -1,0 +1,30 @@
+{
+  "type": "PROPERTY",
+  "scheme": {
+    "propertyID": {
+      "type": "String",
+      "required": true
+    },
+    "address": {
+      "street": { "type": "String" },
+      "city": { "type": "String" },
+      "zipCode": { "type": "String" }
+    },
+    "ownership": {
+      "ownerName": {
+        "type": "String",
+        "required": true
+      },
+      "ownershipPercentage": {
+        "type": "Number"
+      },
+      "acquisitionDate": {
+        "type": "Date"
+      },
+      "propertyType": {
+        "type": "String",
+        "enum": ["Residential", "Commercial", "Land", "Other"]
+      }
+    }
+  }
+}

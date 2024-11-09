@@ -1,0 +1,19 @@
+{
+  "type": "EDUCATION",
+  "scheme": {
+    "institution": { "type": "String", "required": true },
+    "degreeType": { "type": "String" },
+    "startDate": { "type": "Date" },
+    "endDate": { "type": "Date" },
+    "verificationStatus": {
+      "type": "Enum",
+      "enumValues": [
+        "COULDNT_VERIFY",
+        "NOT_VERIFIED",
+        "VERIFIED",
+        "PENDING",
+        "NOT_CHECKED"
+      ]
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "type": "ARREST_RECORD",
+  "scheme": {
+    "recordID": {
+      "type": "String",
+      "required": true
+    },
+    "arrestDate": {
+      "type": "Date"
+    },
+    "location": {
+      "type": "String"
+    },
+    "offenseType": {
+      "type": "Enum",
+      "enumValues": ["Misdemeanor", "Felony", "Infraction"]
+    },
+    "isConvicted": {
+      "type": "Boolean"
+    },
+    "sentenceDetails": {
+      "sentenceType": {
+        "type": "Enum",
+        "enumValues": ["Community Service", "Jail", "Probation"]
+      },
+      "duration": {
+        "type": "Number"
+      },
+      "endDate": {
+        "type": "Date"
+      }
+    }
+  }
+}

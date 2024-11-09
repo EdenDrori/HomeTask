@@ -1,0 +1,31 @@
+{
+  "type": "OFFICER",
+  "scheme": {
+    "officerURL": { "type": "String", "required": true },
+    "name": { "full": { "type": "String" } },
+    "employment": {
+      "jobTitle": { "type": "String" },
+      "company": { "type": "String" },
+      "startDate": { "type": "Date" },
+      "relationType": {
+        "type": "Enum",
+        "enumValues": [
+          "OTHER_ACTIVITY",
+          "RELATED",
+          "TOP_EXECUTIVE",
+          "ADVISORY_BOARD",
+          "EMPLOYEE",
+          "BOARD",
+          "INVESTOR",
+          "OWNER"
+        ]
+      },
+      "status": {
+        "type": "Enum",
+        "enumValues": ["Active", "InActive"]
+      },
+      "endDate": { "type": "Date" },
+      "isMainEmployment": { "type": "Boolean", "value": false }
+    }
+  }
+}
