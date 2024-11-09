@@ -32,7 +32,7 @@ The app should now be running on http://localhost:3000.
 ## How the Dynamic Form Works
 
 ### 1. Fetching Schemas
-The app retrieves a list of available schemas from the server. Once the schemas are loaded, users can select a schema to view and interact with its associated form fields.
+The app retrieves a list of available schemas from a function that simulates a server. Once the schemas are loaded, users can select a schema to view and interact with its associated form fields.
 
 ### 2. Rendering Fields
 Based on the selected schema, the app dynamically renders form fields such as text inputs, date pickers, and select dropdowns. The form fields are rendered according to the field types specified in the schema (e.g., String, Date, Enum).
