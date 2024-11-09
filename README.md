@@ -29,12 +29,6 @@ The app should now be running on http://localhost:3000.
 - **TypeScript**: Provides type safety, reducing runtime errors and improving code maintainability. It ensures that data structures are correctly followed, and type-related issues are caught during development.
 - **Joi for Validation**: Used to validate the schema structure and form inputs. Joi ensures data integrity by enforcing validation rules both for the schema and for user input, reducing the risk of incorrect or malformed data being submitted.
 
-## Assumptions Made
-
-- **Schema Format**: Schemas are assumed to be provided in a format that specifies field types (e.g., String, Date, etc.) and whether the field is required. This format allows for flexibility in how forms are structured and validated.
-- **Nested Fields**: Schema fields can be nested, which requires recursive rendering to properly display nested form groups. This ensures that complex forms with multiple levels of nested data can be handled smoothly.
-- **Real-time Validation**: It is assumed that real-time validation is required. This means the app will check for required fields and correct data types as the user inputs data, offering immediate feedback and ensuring accurate submissions.
-
 ## How the Dynamic Form Works
 
 ### 1. Fetching Schemas
