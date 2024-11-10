@@ -16,8 +16,6 @@ const App = () => {
   const [selctedSchemaType, setSelctedScheaType] = useState<string>(
     ""
   );
-  const [formSubmitionResponse, setFormSubmitionResponse] =
-    useState<FormSubmission|null>(null);
 
   // Fetches the list of schema types when the component mounts and updates the state.
   useEffect(() => {
@@ -46,7 +44,7 @@ const App = () => {
    
     setFormSubmitted(true);
     setSchema(null);
-    setFormSubmitionResponse({ form, type: selctedSchemaType });
+    
     console.log("Submition success:",{ form, type: selctedSchemaType });
     
   };
