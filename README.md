@@ -15,6 +15,25 @@ Additionally, the app handles nested fields, real-time validation, and dynamic u
 - **Responsive UI**: User-friendly, adaptable interface that changes according to the form content.
 
 
+## Running the Project Locally
+
+Follow these steps to run the project on your local machine:
+
+1. **Clone the Repository**:  
+   git clone https://github.com/EdenDrori/HomeTask.git
+   
+2. **Navigate to the Project Directory**:   
+   cd dynamic-form-builder
+
+3. **Install Dependencies**:
+   npm i
+   
+4. **Run the Application**:
+   npm start
+
+   The app will be running at http://localhost:3000.
+
+
 ## Technical Choices
 
 - **React**: Chosen for efficient state and dynamic content management. React's component-based architecture helps manage UI updates and dynamic form generation efficiently.
