@@ -96,15 +96,42 @@ const DynamicForm = ({ schema, submit }: DynamicFormProps) => {
     return true;
   };
 
+  // Helper function to collect paths of all required fields recursively
+  const collectRequiredFields = (schemaGroup: SchemaGroup, path: string[] = []): string[] => {
+    let requiredFields: string[] = [];
+
+    for (const [key, field] of Object.entries(schemaGroup)) {
+      const currentPath = [...path, key]; // Track path for nested fields
+
+      if (isFieldSchema(field) && field.required) {
+        requiredFields.push(currentPath.join('.')); // Add full path as string
+      } else if (!("type" in field) && typeof field === 'object') {
+        // Recursively collect required fields for nested SchemaGroup
+        requiredFields = requiredFields.concat(collectRequiredFields(field as SchemaGroup, currentPath));
+      }
+    }
+
+    return requiredFields;
+  };
+
   // Check if all required fields are filled
   useEffect(() => {
-    const requiredFields = Object.entries(schema.scheme).filter(
-      ([, field]) => isFieldSchema(field) && field.required
-    );
+    // Collect all required fields, including nested ones
+    const requiredFields = collectRequiredFields(schema.scheme);
 
-    const allFieldsFilled = requiredFields.every(
-      ([key]) => formData[key] && formData[key].trim() !== ""
-    );
+    // Check if all required fields are filled
+    const allFieldsFilled = requiredFields.every((path) => {
+      const keys = path.split('.'); // Split path into individual keys
+      let value = formData[keys[keys.length - 1]]; // Get value from formData
+
+      // Final check to ensure the value is filled
+      if (typeof value === 'string') {
+        return value !== ""; // Check that string is not empty after trimming
+      } else {
+        // For other types, ensure it’s not undefined or null
+        return value !== undefined && value !== null;
+      }
+    });
 
     setIsFormComplete(allFieldsFilled);
   }, [formData, schema.scheme]);
@@ -146,3 +173,5 @@ const DynamicForm = ({ schema, submit }: DynamicFormProps) => {
 };
 
 export default DynamicForm;
+
+
