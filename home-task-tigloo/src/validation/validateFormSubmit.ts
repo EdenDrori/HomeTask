@@ -8,8 +8,7 @@ const buildJoiSchema = (schemaGroup: SchemaGroup) => {
 
   for (const [key, field] of Object.entries(schemaGroup)) {
     if ("type" in field) {
-      // console.log("fff", field);
-      // console.log("kk", key);
+  
 
       joiSchema[key] = createJoiFieldSchema(field as FieldSchema);
     } else {
@@ -28,7 +27,7 @@ export const createJoiFieldSchema = (field: FieldSchema | SchemaGroup) => {
 
   if (typeof field === "object" && !("type" in field)) {
     // If field is an object, recursively build Joi schema for nested structure
-    joiField = buildJoiSchema(field); // Ensure `buildJoiSchema` correctly handles nested schemas
+    joiField = buildJoiSchema(field); 
   } else {
     // Handle different field types
     switch (field.type) {
@@ -68,7 +67,7 @@ export const createJoiFieldSchema = (field: FieldSchema | SchemaGroup) => {
       case "Enum":
         // Check if `enumValues` is a string array before using `join()`
         if (Array.isArray(field.enumValues)) {
-          joiField = Joi.string().valid(...field.enumValues); // Handle as an array of strings
+          joiField = Joi.string().valid(...field.enumValues); 
         } else {
           // Handle the case where enumValues is not an array (perhaps an object, handle accordingly)
           joiField = Joi.string();
@@ -98,7 +97,7 @@ export const createJoiFieldSchema = (field: FieldSchema | SchemaGroup) => {
 // Main function to create Joi schema using converted schema details
 const createJoiSchema = (input: any) => {
   const schemaDetails = convertToSchemaDetails(input);
-//console.log(schemaDetails);
+
 
   return buildJoiSchema(schemaDetails.scheme);
 };
