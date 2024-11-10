@@ -50,8 +50,8 @@ const DynamicInput: React.FC<DynamicInputProps> = ({
           required={fieldSchema.required || false}
           value={value || ""}
           onChange={handleChange}
-          error={!!error} // Show error if there's an error message
-          helperText={error || ""} // Display the error message
+          error={!!error} 
+          helperText={error || ""}
           fullWidth
           margin="normal"
         />
